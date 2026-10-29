@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated WASM binary — rebuilt by `npm run build:wasm` (and automatically by `npm run dev`)
+src/wasm/draw.wasm
+
+# Brand & design workspace — separate from the app, not needed to build or run it
+brand/
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Python (brand tools)
+__pycache__/
+*.pyc
+
+# Testing
+coverage/
+
+# Misc
+*.local

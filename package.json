@@ -1,0 +1,33 @@
+{
+  "name": "claudie-avatars",
+  "version": "1.0.0",
+  "description": "Geometric avatar generator — clean, geometric profile pictures inspired by the Claude Desktop app",
+  "type": "module",
+  "scripts": {
+    "predev": "npm run build:wasm",
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && npm run build:wasm && vite build",
+    "build:wasm": "asc src/wasm/draw.ts --target release --outFile src/wasm/draw.wasm --optimize --exportRuntime",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [
+    "avatar",
+    "generator",
+    "geometric",
+    "pfp",
+    "wasm",
+    "phosphor"
+  ],
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.27.25",
+    "gh-pages": "^6.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.0"
+  }
+}

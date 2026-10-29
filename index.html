@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>claudie - free avatar generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/svgs/favicon.svg">
+  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+  <div class="app">
+    <header>
+      <h1>
+        <img src="/svgs/logo-primary.svg" alt="claudie" height="32">
+      </h1>
+      <p class="tagline">A free avatar generator to create minimal,<br>Claude inspired profile pictures.</p>
+    </header>
+
+    <main class="card">
+      <div class="panel">
+        <div class="preview">
+          <canvas id="avatarCanvas" width="512" height="512" aria-label="Avatar preview"></canvas>
+        </div>
+
+        <div class="field">
+          <label id="paletteLabel">Color Palette</label>
+          <div class="select" id="paletteSelect">
+            <button type="button" class="select-trigger" id="paletteTrigger" aria-haspopup="listbox"
+              aria-expanded="false" aria-controls="paletteMenu" aria-labelledby="paletteLabel paletteValue">
+              <span class="swatch" id="paletteSwatch" aria-hidden="true"></span>
+              <span class="select-value" id="paletteValue">Pink & Rose</span>
+              <i class="ph ph-caret-down select-chevron" aria-hidden="true"></i>
+            </button>
+            <ul class="select-menu" id="paletteMenu" role="listbox" aria-labelledby="paletteLabel" tabindex="-1" hidden>
+            </ul>
+          </div>
+        </div>
+
+        <p class="load-error" id="loadError" role="alert" hidden></p>
+      </div>
+
+      <div class="actions">
+        <button id="randomizeBtn" class="btn btn-primary">
+          <span>Generate</span>
+          <i class="ph ph-shuffle" aria-hidden="true"></i>
+        </button>
+
+        <button id="downloadBtn" class="btn btn-neutral">
+          <span>PNG</span>
+          <i class="ph ph-download" aria-hidden="true"></i>
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://github.com/isamyadeep/claude-avatar-generator" target="_blank" rel="noopener noreferrer"><i
+            class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a>
+        <a href="https://x.com/isamyadeep"><i class="ph ph-x-logo" aria-hidden="true"></i>isamyadeep</a>
+        <a><i class="ph ph-asterisk" aria-hidden="true"></i>Not affiliated with
+          Anthropic</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

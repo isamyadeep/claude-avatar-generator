@@ -1,0 +1,16 @@
+{
+  "extends": "assemblyscript/std/assembly.json",
+  "targets": {
+    "release": {
+      "outFile": "src/wasm/draw.wasm",
+      "optimize": true,
+      "shrinkLevel": 2,
+      "converge": true,
+      "noAssert": true
+    }
+  },
+  "options": {
+    "exportRuntime": true,
+    "useAbort": "abort"
+  }
+}
